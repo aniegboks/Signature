@@ -20,12 +20,13 @@
           "placeholder": ""
         }
       },
-      "bg_image": {
-        "type": "Image",
+      "paragraph": {
+        "type": "StructuredText",
         "config": {
-          "label": "bg image",
-          "constraint": {},
-          "thumbnails": []
+          "label": "paragraph",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em"
         }
       },
       "navigation": {
@@ -49,6 +50,96 @@
               "type": "Text",
               "config": {
                 "label": "label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "og image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "cta": {
+        "type": "Group",
+        "config": {
+          "label": "cta",
+          "repeat": true,
+          "fields": {
+            "cta_link": {
+              "type": "Link",
+              "config": {
+                "label": "cta link",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            },
+            "cta_label": {
+              "type": "Text",
+              "config": {
+                "label": "cta label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "socials": {
+        "type": "Group",
+        "config": {
+          "label": "socials",
+          "repeat": true,
+          "fields": {
+            "icons": {
+              "type": "Image",
+              "config": {
+                "label": "icons",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "icon_link": {
+              "type": "Link",
+              "config": {
+                "label": "icon link",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      },
+      "lega": {
+        "type": "Group",
+        "config": {
+          "label": "legal",
+          "repeat": true,
+          "fields": {
+            "legal_link": {
+              "type": "Link",
+              "config": {
+                "label": "legal link",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            },
+            "legal_label": {
+              "type": "Text",
+              "config": {
+                "label": "legal label",
                 "placeholder": ""
               }
             }

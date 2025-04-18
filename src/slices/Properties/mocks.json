@@ -1,0 +1,141 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Purpose"
+						}
+					}
+				]
+			},
+			"paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id anim duis veniam velit cupidatat. Ad anim consequat aliqua excepteur consectetur magna non anim sit amet."
+						}
+					}
+				]
+			},
+			"navigator": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"link",
+								{
+									"key": "28d2a60c-607b-41a9-b3ba-a95b1c3cdaee",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com",
+										"text": "explain"
+									}
+								}
+							],
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "ship",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"image_navigator": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"display_img",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+										"width": 3648,
+										"height": 4560
+									},
+									"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+									"width": 3648,
+									"height": 4560,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "success",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"display_link",
+								{
+									"key": "0d8e518c-2ddd-4e77-a137-fdf51216d5cf",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "rest"
+									}
+								}
+							],
+							[
+								"display_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "buy",
+									"type": "Text"
+								}
+							],
+							[
+								"scale",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "root",
+									"type": "Text"
+								}
+							],
+							[
+								"rooms",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "gate",
+									"type": "Text"
+								}
+							],
+							[
+								"bath",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "control",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

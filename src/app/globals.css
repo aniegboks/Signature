@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-heading: "Cormorant Garamond", serif;
-  --font-body: var(--font-urbanist);
+  --font-heading: "Cormorant Infant", serif;
+  --font-body: "Jost";
 }
 
 @media (prefers-color-scheme: dark) {

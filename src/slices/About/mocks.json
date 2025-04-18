@@ -1,0 +1,83 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Keyvera Real Estate was founded with a vision to redefine the real estate experience through integrity, innovation, and client-first service. ",
+							"spans": [
+								{
+									"type": "em",
+									"start": 0,
+									"end": 142
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Since its inception, Keyvera has grown from a small, passionate team into a trusted name in property development, sales, and management..",
+							"spans": [
+								{
+									"type": "em",
+									"start": 0,
+									"end": 137
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"links": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"about",
+								{
+									"key": "34c11d82-fc11-4839-881d-2b0b65f34dec",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "character"
+									}
+								}
+							],
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "angle",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"history": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consequat exercitation fugiat nostrud incididunt. Exercitation commodo Lorem eu. Aliqua mollit cupidatat do in duis dolor voluptate magna reprehenderit do."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
