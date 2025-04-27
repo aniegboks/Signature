@@ -36,57 +36,20 @@
 					}
 				]
 			},
-			"portfoilo": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"port_heading",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "heading1",
-											"content": {
-												"text": "Individual"
-											}
-										}
-									]
-								}
-							],
-							[
-								"port_sub_heading",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Esse sit veniam cillum."
-											}
-										}
-									]
-								}
-							],
-							[
-								"port_paragraph",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Id elit incididunt laboris sint. Elit excepteur aliqua ea minim."
-											}
-										}
-									]
-								}
-							]
-						]
-					}
-				]
+			"port_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "bound",
+				"type": "Text"
+			},
+			"port_sub_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "pale",
+				"type": "Text"
+			},
+			"port_paragraph": {
+				"__TYPE__": "FieldContent",
+				"value": "solar",
+				"type": "Text"
 			}
 		},
 		"items": []

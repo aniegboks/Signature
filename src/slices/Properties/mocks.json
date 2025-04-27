@@ -1,7 +1,7 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
+		"variation": "alternate",
 		"primary": {
 			"heading": {
 				"__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Purpose"
+							"text": "Sunlight"
 						}
 					}
 				]
@@ -20,38 +20,8 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Id anim duis veniam velit cupidatat. Ad anim consequat aliqua excepteur consectetur magna non anim sit amet."
+							"text": "Magna labore excepteur labore cupidatat culpa amet sit quis in mollit cupidatat laborum consequat. Officia veniam mollit eu quis laborum consectetur incididunt duis."
 						}
-					}
-				]
-			},
-			"navigator": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"link",
-								{
-									"key": "28d2a60c-607b-41a9-b3ba-a95b1c3cdaee",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "http://twitter.com",
-										"text": "explain"
-									}
-								}
-							],
-							[
-								"label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "ship",
-									"type": "Text"
-								}
-							]
-						]
 					}
 				]
 			},
@@ -66,13 +36,13 @@
 								{
 									"origin": {
 										"id": "main",
-										"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
-										"width": 3648,
-										"height": 4560
+										"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+										"width": 5616,
+										"height": 3744
 									},
-									"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
-									"width": 3648,
-									"height": 4560,
+									"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+									"width": 5616,
+									"height": 3744,
 									"edit": {
 										"zoom": 1,
 										"crop": {
@@ -81,54 +51,50 @@
 										},
 										"background": "transparent"
 									},
-									"alt": "success",
+									"alt": "appearance",
 									"credits": null,
 									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
 							[
-								"display_link",
+								"heading",
 								{
-									"key": "0d8e518c-2ddd-4e77-a137-fdf51216d5cf",
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading1",
+											"content": {
+												"text": "Putting"
+											}
+										}
+									]
+								}
+							],
+							[
+								"paragraph",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Commodo consequat magna in deserunt sit."
+											}
+										}
+									]
+								}
+							],
+							[
+								"navigator_link",
+								{
+									"key": "a336df92-df2b-4cf8-961b-f0ae203a2a30",
 									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://google.com",
-										"text": "rest"
+										"text": "else"
 									}
-								}
-							],
-							[
-								"display_label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "buy",
-									"type": "Text"
-								}
-							],
-							[
-								"scale",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "root",
-									"type": "Text"
-								}
-							],
-							[
-								"rooms",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "gate",
-									"type": "Text"
-								}
-							],
-							[
-								"bath",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "control",
-									"type": "Text"
 								}
 							]
 						]
@@ -136,6 +102,11 @@
 				]
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

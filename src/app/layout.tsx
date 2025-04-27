@@ -6,19 +6,20 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
+import { ReactLenis } from '@/utils/lenis';
 
-// Configure Cormorant Garamond for headings
 const cormorant_infant = Cormorant_Infant({
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-cormorant",  // Added variable for CSS access
+  variable: "--font-cormorant", 
+  display: "swap",
 });
 
-// Configure Urbanist for body text
 const jost = Jost({
   subsets: ["latin"],
   variable: "--font-urbanist",
+  display: "swap", 
 });
 
 type Props = {
@@ -55,13 +56,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${jost.variable} ${cormorant_infant.variable} antialiased`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <PrismicPreview repositoryName={repositoryName} />
-      </body>
+    <html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613">
+      <ReactLenis root>
+        <body className={`${jost.variable} ${cormorant_infant.variable} antialiased`}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <PrismicPreview repositoryName={repositoryName} />
+        </body>
+      </ReactLenis>
     </html>
   );
 }

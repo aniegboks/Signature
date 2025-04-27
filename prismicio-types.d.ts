@@ -4,6 +4,71 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type ContentDocumentDataSlicesSlice = ContentSlice | HeroSlice;
+
+/**
+ * Content for content documents
+ */
+interface ContentDocumentData {
+  /**
+   * Slice Zone field in *content*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ContentDocumentDataSlicesSlice> /**
+   * Meta Title field in *content*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: content.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *content*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: content.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *content*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * content document from Prismic
+ *
+ * - **API ID**: `content`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContentDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ContentDocumentData>,
+    "content",
+    Lang
+  >;
+
 type HomePageDocumentDataSlicesSlice =
   | FaqSlice
   | CtaSlice
@@ -14,11 +79,11 @@ type HomePageDocumentDataSlicesSlice =
   | HeroSlice;
 
 /**
- * Content for homepage documents
+ * Content for home page documents
  */
 interface HomePageDocumentData {
   /**
-   * title field in *homepage*
+   * title field in *home page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -29,7 +94,7 @@ interface HomePageDocumentData {
   title: prismic.KeyTextField;
 
   /**
-   * Slice Zone field in *homepage*
+   * Slice Zone field in *home page*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -38,7 +103,7 @@ interface HomePageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<HomePageDocumentDataSlicesSlice> /**
-   * Meta Title field in *homepage*
+   * Meta Title field in *home page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -49,7 +114,7 @@ interface HomePageDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *homepage*
+   * Meta Description field in *home page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -60,7 +125,7 @@ interface HomePageDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *homepage*
+   * Meta Image field in *home page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -72,7 +137,7 @@ interface HomePageDocumentData {
 }
 
 /**
- * homepage document from Prismic
+ * home page document from Prismic
  *
  * - **API ID**: `home_page`
  * - **Repeatable**: `false`
@@ -87,7 +152,13 @@ export type HomePageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = AboutSlice | HeroSlice;
+type PageDocumentDataSlicesSlice =
+  | CtaSlice
+  | FaqSlice
+  | PropertiesSlice
+  | MilestonesSlice
+  | AboutSlice
+  | HeroSlice;
 
 /**
  * Content for page documents
@@ -147,6 +218,136 @@ interface PageDocumentData {
  */
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
+type ProjectsDocumentDataSlicesSlice = PropertiesSlice | HeroSlice;
+
+/**
+ * Content for projects documents
+ */
+interface ProjectsDocumentData {
+  /**
+   * Slice Zone field in *projects*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ProjectsDocumentDataSlicesSlice> /**
+   * Meta Title field in *projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: projects.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: projects.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * projects document from Prismic
+ *
+ * - **API ID**: `projects`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ProjectsDocumentData>,
+    "projects",
+    Lang
+  >;
+
+type PropertiesDocumentDataSlicesSlice = PropertiesSlice | HeroSlice;
+
+/**
+ * Content for properties documents
+ */
+interface PropertiesDocumentData {
+  /**
+   * Slice Zone field in *properties*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: properties.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PropertiesDocumentDataSlicesSlice> /**
+   * Meta Title field in *properties*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: properties.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *properties*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: properties.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *properties*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: properties.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * properties document from Prismic
+ *
+ * - **API ID**: `properties`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PropertiesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PropertiesDocumentData>,
+    "properties",
+    Lang
+  >;
 
 /**
  * Item in *Settings → navigation*
@@ -376,8 +577,11 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | ContentDocument
   | HomePageDocument
   | PageDocument
+  | ProjectsDocument
+  | PropertiesDocument
   | SettingsDocument;
 
 /**
@@ -466,6 +670,135 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Item in *Metrics → Default → Primary → overview*
+ */
+export interface ContentSliceDefaultPrimaryOverviewItem {
+  /**
+   * stat result field in *Metrics → Default → Primary → overview*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.default.primary.overview[].stat_result
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  stat_result: prismic.KeyTextField;
+
+  /**
+   * al stat field in *Metrics → Default → Primary → overview*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.default.primary.overview[].al_stat
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  al_stat: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Metrics → Default → Primary → gallery img*
+ */
+export interface ContentSliceDefaultPrimaryGalleryImgItem {
+  /**
+   * gal img field in *Metrics → Default → Primary → gallery img*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.default.primary.gallery_img[].gal_img
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  gal_img: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Metrics → Default → Primary*
+ */
+export interface ContentSliceDefaultPrimary {
+  /**
+   * title field in *Metrics → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * geo field in *Metrics → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.default.primary.geo
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  geo: prismic.KeyTextField;
+
+  /**
+   * over paragraph field in *Metrics → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.default.primary.over_paragraph
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  over_paragraph: prismic.KeyTextField;
+
+  /**
+   * overview field in *Metrics → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.default.primary.overview[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  overview: prismic.GroupField<
+    Simplify<ContentSliceDefaultPrimaryOverviewItem>
+  >;
+
+  /**
+   * gallery img field in *Metrics → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content.default.primary.gallery_img[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  gallery_img: prismic.GroupField<
+    Simplify<ContentSliceDefaultPrimaryGalleryImgItem>
+  >;
+}
+
+/**
+ * Default variation for Metrics Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Metrics*
+ */
+type ContentSliceVariation = ContentSliceDefault;
+
+/**
+ * Metrics Shared Slice
+ *
+ * - **API ID**: `content`
+ * - **Description**: Content
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentSlice = prismic.SharedSlice<
+  "content",
+  ContentSliceVariation
+>;
 
 /**
  * Primary content in *Cta → Default → Primary*
@@ -675,57 +1008,57 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Hero → about hero → Primary*
+ * Primary content in *Hero → alternate → Primary*
  */
-export interface HeroSliceAboutHeroPrimary {
+export interface HeroSliceAlternatePrimary {
   /**
-   * heading field in *Hero → about hero → Primary*
+   * heading field in *Hero → alternate → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.aboutHero.primary.heading
+   * - **API ID Path**: hero.alternate.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.RichTextField;
 
   /**
-   * body field in *Hero → about hero → Primary*
+   * body field in *Hero → alternate → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.aboutHero.primary.body
+   * - **API ID Path**: hero.alternate.primary.body
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   body: prismic.RichTextField;
 
   /**
-   * image field in *Hero → about hero → Primary*
+   * image field in *Hero → alternate → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.aboutHero.primary.image
+   * - **API ID Path**: hero.alternate.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
 }
 
 /**
- * about hero variation for Hero Slice
+ * alternate variation for Hero Slice
  *
- * - **API ID**: `aboutHero`
+ * - **API ID**: `alternate`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSliceAboutHero = prismic.SharedSliceVariation<
-  "aboutHero",
-  Simplify<HeroSliceAboutHeroPrimary>,
+export type HeroSliceAlternate = prismic.SharedSliceVariation<
+  "alternate",
+  Simplify<HeroSliceAlternatePrimary>,
   never
 >;
 
 /**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault | HeroSliceAboutHero;
+type HeroSliceVariation = HeroSliceDefault | HeroSliceAlternate;
 
 /**
  * Hero Shared Slice
@@ -737,44 +1070,39 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceAboutHero;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Item in *Milestones → Default → Primary → portfoilo*
- */
-export interface MilestonesSliceDefaultPrimaryPortfoiloItem {
-  /**
-   * port heading field in *Milestones → Default → Primary → portfoilo*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: milestones.default.primary.portfoilo[].port_heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  port_heading: prismic.RichTextField;
-
-  /**
-   * port sub heading field in *Milestones → Default → Primary → portfoilo*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: milestones.default.primary.portfoilo[].port_sub_heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  port_sub_heading: prismic.RichTextField;
-
-  /**
-   * port paragraph field in *Milestones → Default → Primary → portfoilo*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: milestones.default.primary.portfoilo[].port_paragraph
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  port_paragraph: prismic.RichTextField;
-}
-
-/**
  * Primary content in *Milestones → Default → Primary*
  */
 export interface MilestonesSliceDefaultPrimary {
+  /**
+   * port heading field in *Milestones → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: milestones.default.primary.port_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  port_heading: prismic.KeyTextField;
+
+  /**
+   * port sub heading field in *Milestones → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: milestones.default.primary.port_sub_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  port_sub_heading: prismic.KeyTextField;
+
+  /**
+   * port paragraph field in *Milestones → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: milestones.default.primary.port_paragraph
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  port_paragraph: prismic.KeyTextField;
+
   /**
    * heading field in *Milestones → Default → Primary*
    *
@@ -804,18 +1132,6 @@ export interface MilestonesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   paragraph: prismic.RichTextField;
-
-  /**
-   * portfoilo field in *Milestones → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: milestones.default.primary.portfoilo[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  portfoilo: prismic.GroupField<
-    Simplify<MilestonesSliceDefaultPrimaryPortfoiloItem>
-  >;
 }
 
 /**
@@ -849,53 +1165,18 @@ export type MilestonesSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Properties → Default → Primary → navigator*
+ * Item in *Properties → default → Primary → image navigator*
  */
-export interface PropertiesSliceDefaultPrimaryNavigatorItem {
+export interface PropertiesSliceAlternatePrimaryImageNavigatorItem {
   /**
-   * link field in *Properties → Default → Primary → navigator*
+   * navigator link field in *Properties → default → Primary → image navigator*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.navigator[].link
+   * - **API ID Path**: properties.alternate.primary.image_navigator[].navigator_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
-  /**
-   * label field in *Properties → Default → Primary → navigator*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.navigator[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-}
-
-/**
- * Item in *Properties → Default → Primary → image navigator*
- */
-export interface PropertiesSliceDefaultPrimaryImageNavigatorItem {
-  /**
-   * display img field in *Properties → Default → Primary → image navigator*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.image_navigator[].display_img
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  display_img: prismic.ImageField<never>;
-
-  /**
-   * display link field in *Properties → Default → Primary → image navigator*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.image_navigator[].display_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  display_link: prismic.LinkField<
+  navigator_link: prismic.LinkField<
     string,
     string,
     unknown,
@@ -904,112 +1185,90 @@ export interface PropertiesSliceDefaultPrimaryImageNavigatorItem {
   >;
 
   /**
-   * display label field in *Properties → Default → Primary → image navigator*
+   * display img field in *Properties → default → Primary → image navigator*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.image_navigator[].display_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: properties.alternate.primary.image_navigator[].display_img
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  display_label: prismic.KeyTextField;
+  display_img: prismic.ImageField<never>;
 
   /**
-   * scale field in *Properties → Default → Primary → image navigator*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.image_navigator[].scale
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  scale: prismic.KeyTextField;
-
-  /**
-   * rooms field in *Properties → Default → Primary → image navigator*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.image_navigator[].rooms
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  rooms: prismic.KeyTextField;
-
-  /**
-   * bath field in *Properties → Default → Primary → image navigator*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.image_navigator[].bath
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  bath: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Properties → Default → Primary*
- */
-export interface PropertiesSliceDefaultPrimary {
-  /**
-   * heading field in *Properties → Default → Primary*
+   * heading field in *Properties → default → Primary → image navigator*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.heading
+   * - **API ID Path**: properties.alternate.primary.image_navigator[].heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.RichTextField;
 
   /**
-   * paragraph field in *Properties → Default → Primary*
+   * paragraph field in *Properties → default → Primary → image navigator*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.paragraph
+   * - **API ID Path**: properties.alternate.primary.image_navigator[].paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Properties → default → Primary*
+ */
+export interface PropertiesSliceAlternatePrimary {
+  /**
+   * heading field in *Properties → default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: properties.alternate.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * paragraph field in *Properties → default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: properties.alternate.primary.paragraph
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   paragraph: prismic.RichTextField;
 
   /**
-   * navigator field in *Properties → Default → Primary*
+   * image navigator field in *Properties → default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.navigator[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  navigator: prismic.GroupField<
-    Simplify<PropertiesSliceDefaultPrimaryNavigatorItem>
-  >;
-
-  /**
-   * image navigator field in *Properties → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: properties.default.primary.image_navigator[]
+   * - **API ID Path**: properties.alternate.primary.image_navigator[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   image_navigator: prismic.GroupField<
-    Simplify<PropertiesSliceDefaultPrimaryImageNavigatorItem>
+    Simplify<PropertiesSliceAlternatePrimaryImageNavigatorItem>
   >;
 }
 
 /**
- * Default variation for Properties Slice
+ * default variation for Properties Slice
  *
- * - **API ID**: `default`
+ * - **API ID**: `alternate`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type PropertiesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<PropertiesSliceDefaultPrimary>,
+export type PropertiesSliceAlternate = prismic.SharedSliceVariation<
+  "alternate",
+  Simplify<PropertiesSliceAlternatePrimary>,
   never
 >;
 
 /**
  * Slice variation for *Properties*
  */
-type PropertiesSliceVariation = PropertiesSliceDefault;
+type PropertiesSliceVariation = PropertiesSliceAlternate;
 
 /**
  * Properties Shared Slice
@@ -1196,12 +1455,21 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ContentDocument,
+      ContentDocumentData,
+      ContentDocumentDataSlicesSlice,
       HomePageDocument,
       HomePageDocumentData,
       HomePageDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      ProjectsDocument,
+      ProjectsDocumentData,
+      ProjectsDocumentDataSlicesSlice,
+      PropertiesDocument,
+      PropertiesDocumentData,
+      PropertiesDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
@@ -1214,6 +1482,12 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      ContentSlice,
+      ContentSliceDefaultPrimaryOverviewItem,
+      ContentSliceDefaultPrimaryGalleryImgItem,
+      ContentSliceDefaultPrimary,
+      ContentSliceVariation,
+      ContentSliceDefault,
       CtaSlice,
       CtaSliceDefaultPrimary,
       CtaSliceVariation,
@@ -1225,21 +1499,19 @@ declare module "@prismicio/client" {
       FaqSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
-      HeroSliceAboutHeroPrimary,
+      HeroSliceAlternatePrimary,
       HeroSliceVariation,
       HeroSliceDefault,
-      HeroSliceAboutHero,
+      HeroSliceAlternate,
       MilestonesSlice,
-      MilestonesSliceDefaultPrimaryPortfoiloItem,
       MilestonesSliceDefaultPrimary,
       MilestonesSliceVariation,
       MilestonesSliceDefault,
       PropertiesSlice,
-      PropertiesSliceDefaultPrimaryNavigatorItem,
-      PropertiesSliceDefaultPrimaryImageNavigatorItem,
-      PropertiesSliceDefaultPrimary,
+      PropertiesSliceAlternatePrimaryImageNavigatorItem,
+      PropertiesSliceAlternatePrimary,
       PropertiesSliceVariation,
-      PropertiesSliceDefault,
+      PropertiesSliceAlternate,
       RecentSlice,
       RecentSliceDefaultPrimaryNavigatorItem,
       RecentSliceDefaultPrimaryImageNavigatorItem,

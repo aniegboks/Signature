@@ -5,8 +5,8 @@
   "description": "Properties",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
+      "id": "alternate",
+      "name": "default",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -30,16 +30,16 @@
             "multi": "paragraph,strong,em"
           }
         },
-        "navigator": {
+        "image_navigator": {
           "type": "Group",
           "config": {
-            "label": "navigator",
+            "label": "image navigator",
             "repeat": true,
             "fields": {
-              "link": {
+              "navigator_link": {
                 "type": "Link",
                 "config": {
-                  "label": "link",
+                  "label": "navigator link",
                   "placeholder": "",
                   "select": null,
                   "allowTargetBlank": true,
@@ -47,22 +47,6 @@
                   "repeat": false
                 }
               },
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "image_navigator": {
-          "type": "Group",
-          "config": {
-            "label": "image navigator",
-            "repeat": true,
-            "fields": {
               "display_img": {
                 "type": "Image",
                 "config": {
@@ -71,43 +55,22 @@
                   "thumbnails": []
                 }
               },
-              "display_link": {
-                "type": "Link",
+              "heading": {
+                "type": "StructuredText",
                 "config": {
-                  "label": "display link",
+                  "label": "heading",
                   "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
+                  "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
                 }
               },
-              "display_label": {
-                "type": "Text",
+              "paragraph": {
+                "type": "StructuredText",
                 "config": {
-                  "label": "display label",
-                  "placeholder": ""
-                }
-              },
-              "scale": {
-                "type": "Text",
-                "config": {
-                  "label": "scale",
-                  "placeholder": ""
-                }
-              },
-              "rooms": {
-                "type": "Text",
-                "config": {
-                  "label": "rooms",
-                  "placeholder": ""
-                }
-              },
-              "bath": {
-                "type": "Text",
-                "config": {
-                  "label": "bath",
-                  "placeholder": ""
+                  "label": "paragraph",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em"
                 }
               }
             }

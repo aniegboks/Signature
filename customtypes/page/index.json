@@ -17,6 +17,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "cta": {
+              "type": "SharedSlice"
+            },
+            "faq": {
+              "type": "SharedSlice"
+            },
+            "properties": {
+              "type": "SharedSlice"
+            },
+            "milestones": {
+              "type": "SharedSlice"
+            },
             "about": {
               "type": "SharedSlice"
             },
