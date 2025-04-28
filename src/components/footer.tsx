@@ -22,8 +22,8 @@ const Footer = async () => {
               <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 pt-24 pb-8 px-4">
                 {/* Left section */}
                 <div>
-                  <Link href="/" className="text-4xl font-heading font-bold italic">
-                    {settings.data.site_title}
+                  <Link href="/" className="text-xl font-heading font-bold italic">
+                  {`{ Nectar: website }`}
                   </Link>
                   <div className="mt-2">
                     <PrismicRichText field={settings.data.paragraph} />

@@ -33,8 +33,8 @@ const Nav = ({ settings }: SettingsProps) => {
                 </ul>
 
                 {/* Center Logo */}
-                <Link href="/" className="text-3xl font-heading font-bold italic text-gray-900 hover:opacity-80 transition ">
-                    {settings.data.site_title}
+                <Link href="/" className="text-xl font-heading font-bold italic text-gray-900 hover:opacity-80 transition ">
+                    {`{ Nectar: website }`}
                 </Link>
 
                 {/* Right CTA */}
