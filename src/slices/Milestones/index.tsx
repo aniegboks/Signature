@@ -29,7 +29,7 @@ const Milestones: FC<MilestonesProps> = ({ slice }) => {
               <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight font-bold">
                 <PrismicRichText field={slice.primary.heading} />
               </div>
-              <div className="text-xl xl:text-xl font-heading max-w-full text-neutral-600 mt-2">
+              <div className="font-heading max-w-full text-neutral-600 mt-2 text-md">
                 <PrismicRichText field={slice.primary.sub_heading} />
               </div>
               <div className="mt-4">

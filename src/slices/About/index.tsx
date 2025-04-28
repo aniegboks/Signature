@@ -37,7 +37,7 @@ const About: FC<AboutProps> = ({ slice }) => {
                   ))}
                 </div>
                 <div
-                  className="text-xl xl:text-xl font-heading max-w-full text-neutral-600"
+                  className="text-md font-heading max-w-full text-neutral-600"
                   style={{ maxWidth: '800px' }}
                 >
                   <PrismicRichText field={slice.primary.history} />
@@ -45,7 +45,7 @@ const About: FC<AboutProps> = ({ slice }) => {
               </div>
               <div className="text-start md:text-left flex justify-end">
                 <div
-                  className="text-xl xl:text-xl font-heading max-w-full text-neutral-600"
+                  className="text-md font-heading max-w-full text-neutral-600"
                   style={{ maxWidth: '800px' }}
                 >
                   <PrismicRichText field={slice.primary.caption} />

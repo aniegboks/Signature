@@ -79,7 +79,7 @@ const Footer = async () => {
 
               {/* Footer bottom section */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
-                <div className="font-heading italic">
+                <div className="font-heading italic text-sm">
                   © {new Date().getFullYear()}
                   <span className="mx-2 text-sm">Nectar Inc. All rights reserved</span>
                 </div>

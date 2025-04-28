@@ -77,6 +77,7 @@ const Nav = ({ settings }: SettingsProps) => {
                             {settings.data.navigation.map(({ link, label }, i) => (
                                 <motion.li
                                     key={i}
+                                    onClick={() => setIsToggle(!isToggle)}
                                     className="list-none"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
@@ -101,6 +102,7 @@ const Nav = ({ settings }: SettingsProps) => {
                             {settings.data.cta.map(({ cta_link, cta_label }) => (
                                 <motion.li
                                     key={cta_label}
+                                    onClick={() => setIsToggle(!isToggle)}
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
