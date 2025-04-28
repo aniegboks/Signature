@@ -22,14 +22,9 @@ const jost = Jost({
   display: "swap", 
 });
 
-type Props = {
-  params: { id: string },
-  searchParams: { [key: string]: string | string[] | undefined }
-}
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-): Promise<Metadata> {
+
+export async function generateMetadata(): Promise<Metadata> {
   try {
     const client = createClient(repositoryName);
     const settings = await client.getSingle("settings");

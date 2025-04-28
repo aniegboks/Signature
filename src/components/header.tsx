@@ -1,10 +1,7 @@
 import React from 'react'
 import { createClient } from "@prismicio/client";
 import { repositoryName } from '@/prismicio';
-import { PrismicNextLink } from '@prismicio/next';
-import Link from 'next/link';
 import Container from './ui/container';
-import { Menu, X } from 'lucide-react';
 import Nav from './nav';
 
 

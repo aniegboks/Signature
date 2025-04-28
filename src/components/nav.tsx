@@ -98,7 +98,7 @@ const Nav = ({ settings }: SettingsProps) => {
                         </ul>
 
                         <ul className="flex flex-col gap-8 md:hidden mt-4">
-                            {settings.data.cta.map(({ cta_link, cta_label }, i) => (
+                            {settings.data.cta.map(({ cta_link, cta_label }) => (
                                 <motion.li
                                     key={cta_label}
                                     initial={{ opacity: 0 }}

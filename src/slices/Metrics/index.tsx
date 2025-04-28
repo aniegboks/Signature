@@ -1,14 +1,12 @@
 "use client"
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Container from "@/components/ui/container";
-import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { Citrus, Sprout, Martini, Flame } from "lucide-react";
 import Carousel from "@/components/ui/carousel";
-import { clsx } from "clsx";
 import { RevealAnimation } from "@/utils/reveal_animation";
 
 /**

@@ -3,7 +3,6 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import Container from "@/components/ui/container";
-import { motion } from "framer-motion";
 import { RevealAnimation } from "@/utils/reveal_animation";
 
 export type HeroProps = {

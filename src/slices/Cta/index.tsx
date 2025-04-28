@@ -3,7 +3,6 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Container from "@/components/ui/container";
 import ContactForm from "@/components/ui/form";
-import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { RevealAnimation } from "@/utils/reveal_animation";
 
