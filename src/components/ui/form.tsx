@@ -33,7 +33,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full h-full max-w-full bg-transparent p-6 sm:p-8 rounded-lg shadow-lg">
+    <div className="w-full h-full max-w-full bg-transparent p-6 sm:p-8 rounded-lg">
       <Toaster position="top-center" reverseOrder={false} />
 
       <form onSubmit={handleSubmit} className="w-full space-y-4">
@@ -48,7 +48,7 @@ const ContactForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border-b border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+            className="w-full px-4 py-2 border-b border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
             required
           />
         </div>
@@ -64,7 +64,7 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border-b border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+            className="w-full px-4 py-2 border-b border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
             required
           />
         </div>
@@ -80,7 +80,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             rows={4}
-            className="w-full px-4 py-2 border-b border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+            className="w-full px-4 py-2 border-b border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
             required
           />
         </div>

@@ -34,7 +34,7 @@ const Cta: FC<CtaProps> = ({ slice }) => {
 
               {/* Right Side - Text and Form */}
               <div className="flex flex-col justify-center h-full w-full bg-neutral-800 p-6">
-                <div className="w-full px-20">
+                <div className="w-full">
                   <ContactForm />
                 </div>
               </div>
