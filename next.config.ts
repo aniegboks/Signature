@@ -6,5 +6,3 @@ const nextConfig: NextConfig = {
     domains: ["images.unsplash.com", 'images.prismic.io']
   }
 };
-
-export default nextConfig;
