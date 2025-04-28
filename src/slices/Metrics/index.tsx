@@ -25,7 +25,8 @@ const Metric: FC<ContentProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
     >
       <Container>
-        <RevealAnimation>
+        <div>
+          <RevealAnimation>
           <div className="pb-24">
             <div>
               <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 pt-48 pb-16">
@@ -106,7 +107,8 @@ const Metric: FC<ContentProps> = ({ slice }) => {
               ))}
             </div>
           </div>
-        </RevealAnimation>
+          </RevealAnimation>
+        </div>
       </Container>
     </section >
   );

@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import clsx from 'clsx'
+import { AnimatePresence, motion } from 'framer-motion'
 
 type CarouselImage = {
   url: string
@@ -30,17 +30,30 @@ export default function Carousel({ images, autoSlideDelay = 4000 }: CarouselProp
   }, [images.length, autoSlideDelay])
 
   return (
-    <div className="w-full relative aspect-video overflow-hidden">
-      {/* Big display image */}
-      <Image
-        src={images[activeIndex].url}
-        alt={images[activeIndex].alt || `Slide ${activeIndex + 1}`}
-        fill
-        className="object-cover transition-all duration-700 ease-in-out"
-      />
+    <div className="w-full relative aspect-video overflow-hidden bg-black">
+      {/* Animated Zoom-In Image */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={images[activeIndex].url}
+          initial={{ opacity: 0, scale: 1.2 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.2 }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          className="absolute inset-0 overflow-hidden"
+        >
+          <div
+            style={{
+              backgroundImage: `url(${images[activeIndex].url})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+            className="w-full h-full bg-no-repeat"
+          />
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Thumbnails - bottom right overlay */}
-      <div className="absolute bottom-4 right-4 flex gap-2 bg-black/40 p-2 rounded-lg">
+      {/* Thumbnails - hidden on small screens */}
+      <div className="absolute bottom-4 right-4 hidden md:flex gap-2 bg-black/40 p-2 rounded-lg">
         {images.map((img, index) => (
           <button
             key={index}
@@ -53,11 +66,10 @@ export default function Carousel({ images, autoSlideDelay = 4000 }: CarouselProp
               }
             )}
           >
-            <Image
+            <img
               src={img.url}
               alt={img.alt || `Thumbnail ${index + 1}`}
-              fill
-              className="object-cover"
+              className="object-cover w-full h-full"
             />
           </button>
         ))}
