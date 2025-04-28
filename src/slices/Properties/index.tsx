@@ -2,11 +2,9 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Container from "@/components/ui/container";
-import Button from "@/components/ui/button";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicNextImage } from "@prismicio/next";
-import { LandPlot, Bed, Bath } from "lucide-react";
 import { RevealAnimation } from "@/utils/reveal_animation";
 
 /**
