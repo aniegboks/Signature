@@ -35,10 +35,10 @@ const Footer = async () => {
                   <div>
                     {settings.data.cta.map(({ cta_label, cta_link }, index) => (
                       <span key={index}
-                        className='flex lg:justify-end md:justify-start sm:justify-start'>
+                        className='flex lg:justify-end md:justify-start sm:justify-start text-sm'>
                         <PrismicNextLink
                           field={cta_link}
-                          className="block mb-4"
+                          className="block mb-4 text-sm"
                         >
                           {cta_label}
                         </PrismicNextLink>
@@ -48,11 +48,11 @@ const Footer = async () => {
                   <div>
 
                     {settings.data.navigation.map(({ link, label }, index) => (
-                      <span key={index} className='flex lg:justify-end md:justify-start sm:justify-start'>
+                      <span key={index} className='flex lg:justify-end md:justify-start sm:justify-start text-sm'>
 
                         <PrismicNextLink
                           field={link}
-                          className="block mb-4"
+                          className="block mb-4 text-sm"
                         >
                           {label}
                         </PrismicNextLink>
@@ -62,10 +62,10 @@ const Footer = async () => {
                   <div>
                     {settings.data.lega.map(({ legal_link, legal_label }, index) => (
                       <span key={index}
-                        className='flex lg:justify-end md:justify-start sm:justify-start'>
+                        className='flex lg:justify-end md:justify-start sm:justify-start text-sm'>
                         <PrismicNextLink
                           field={legal_link}
-                          className="block mb-4"
+                          className="block mb-4 text-sm"
                         >
                           {legal_label}
                         </PrismicNextLink>
@@ -81,7 +81,7 @@ const Footer = async () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
                 <div className="font-heading italic">
                   © {new Date().getFullYear()}
-                  <span className="mx-2">Nectar Inc. All rights reserved</span>
+                  <span className="mx-2 text-sm">Nectar Inc. All rights reserved</span>
                 </div>
                 <div className="flex sm:justify-end gap-4">
                   {settings.data.socials.map(({ icon_link, icons }, index) => (
