@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #ffffff; /* Always white background */
   --foreground: #171717;
 }
 
@@ -12,12 +12,7 @@
   --font-body: "Cormorant Infant", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Removed the dark mode override for background/foreground colors */
 
 body {
   background: var(--background);
@@ -47,7 +42,7 @@ html.lenis body {
   overscroll-behavior: contain;
 }
 
-lenis.lenis-stopped {
+.lenis.lenis-stopped {
   overflow: hidden;
 }
 

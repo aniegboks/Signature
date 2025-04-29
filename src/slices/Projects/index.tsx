@@ -44,6 +44,7 @@ const Recent: FC<RecentProps> = ({ slice }) => {
                 ))}
               </div>
             </div>
+
             <div className="mt-8 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4">
               {slice.primary.image_navigator.map(
                 ({ display_img, display_link, display_text, display_geo }) => (
@@ -52,17 +53,19 @@ const Recent: FC<RecentProps> = ({ slice }) => {
                       field={display_link}
                       className="relative flex flex-col h-full"
                     >
-                      <div className="relative aspect-[4/5] w-full overflow-hidden">
+                      <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden">
                         <PrismicNextImage
                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                           field={display_img}
                         />
-                        {/* Gradient Overlay - Full height now */}
+                        {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
 
-                        {/* Text positioned better for all screen sizes */}
+                        {/* Text Overlay */}
                         <div className="absolute bottom-0 left-0 w-full text-white p-4 md:p-6">
-                          <div className="text-xl sm:text-2xl font-heading font-bold mb-2">{display_text}</div>
+                          <div className="text-xl sm:text-2xl font-heading font-bold mb-2">
+                            {display_text}
+                          </div>
                           <div className="flex items-center text-sm md:text-base">
                             <MapPin size={16} className="mr-2 flex-shrink-0" />
                             <span className="truncate">{display_geo}</span>

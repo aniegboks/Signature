@@ -37,16 +37,13 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
             {/* Property Cards */}
             <div className="mt-8 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
               {slice.primary.image_navigator.map(({ heading, display_img, paragraph, navigator_link }, i) => (
-
                 <div key={i} className="flex flex-col h-full">
                   <PrismicNextLink field={navigator_link}>
-                    <div className="relative aspect-[4/5] w-full overflow-hidden">
-                      <div className="relative aspect-[4/5] transition-transform duration-300 ease-in-out hover:scale-110">
-                        <PrismicNextImage
-                          className="w-full h-full object-cover"
-                          field={display_img}
-                        />
-                      </div>
+                    <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
+                      <PrismicNextImage
+                        className="w-full h-full object-cover"
+                        field={display_img}
+                      />
                     </div>
 
                     <div className="p-4">
@@ -64,7 +61,6 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
                   </PrismicNextLink>
                 </div>
               ))}
-
             </div>
           </div>
         </RevealAnimation>
