@@ -39,13 +39,14 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
               {slice.primary.image_navigator.map(({ heading, display_img, paragraph, navigator_link }, i) => (
                 <div key={i} className="flex flex-col h-full">
                   <PrismicNextLink field={navigator_link}>
-                    <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 rounded-md">
-                      <PrismicNextImage
-                        className="w-full h-full object-cover"
-                        field={display_img}
-                      />
+                    <div className="overflow-hidden">
+                      <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 rounded-md">
+                        <PrismicNextImage
+                          className="w-full h-full object-cover"
+                          field={display_img}
+                        />
+                      </div>
                     </div>
-
                     <div className="p-4">
                       <div className="text-2xl font-heading font-bold">
                         <PrismicRichText field={heading} />
