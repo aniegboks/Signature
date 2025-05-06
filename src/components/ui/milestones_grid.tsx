@@ -17,7 +17,7 @@ const MilestoneGrid = () => {
                     <h3>Built Success</h3>
                 </div>
                 <div className="mt-2 text-neutral-600 font-normal">
-                    <p>Our team has successfully crafted numerous signature beverages.</p>
+                    <p>Our team has successfully crafted numerous signature Apparels.</p>
                 </div>
             </div>
 
@@ -44,10 +44,10 @@ const MilestoneGrid = () => {
                         </span> : <CounterAnimation from={0} to={200} suffix=" +" />}
                 </div>
                 <div className="text-xl xl:text-2xl font-heading max-w-full mt-2">
-                    <h3>Beverage Mastery</h3>
+                    <h3>Apparels Mastery</h3>
                 </div>
                 <div className="mt-2 text-neutral-600 font-normal">
-                    <p>We believe that the enjoyment of our customers is essential.</p>
+                    <p>We believe that the comfort of our customers is essential.</p>
                 </div>
             </div>
 
