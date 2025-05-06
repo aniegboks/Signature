@@ -20,8 +20,8 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="my-23"
     >
-      <hr className="my-32 text-neutral-300" />
       <Container>
         <RevealAnimation>
           <div className="flex-grow">
@@ -39,7 +39,7 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
               {slice.primary.image_navigator.map(({ heading, display_img, paragraph, navigator_link }, i) => (
                 <div key={i} className="flex flex-col h-full">
                   <PrismicNextLink field={navigator_link}>
-                    <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
+                    <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 rounded-md">
                       <PrismicNextImage
                         className="w-full h-full object-cover"
                         field={display_img}

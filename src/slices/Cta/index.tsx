@@ -14,9 +14,8 @@ const Cta: FC<CtaProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="py-24"
+      className="py-32"
     >
-      <hr className="text-neutral-300 my-24" />
       <Container>
         <RevealAnimation>
           <div>
@@ -25,15 +24,15 @@ const Cta: FC<CtaProps> = ({ slice }) => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Left Side - Image */}
-              <div className="w-full h-full">
+              <div className="w-full h-full rounded-s-md">
                 <PrismicNextImage
                   field={slice.primary.cta_img}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-s-md"
                 />
               </div>
 
               {/* Right Side - Text and Form */}
-              <div className="flex flex-col justify-center h-full w-full bg-neutral-800 p-6">
+              <div className="flex flex-col justify-center h-full w-full bg-neutral-800 p-6 rounded-e-md">
                 <div className="w-full">
                   <ContactForm />
                 </div>

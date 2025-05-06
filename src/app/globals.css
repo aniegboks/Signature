@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff; /* Always white background */
+  --background: #ffffff;
+  /* Always white background */
   --foreground: #171717;
 }
 
@@ -28,6 +29,29 @@ h5,
 h6 {
   font-family: var(--font-heading);
 }
+
+@keyframes gradient-x-hover {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.hover-gradient-move {
+  background-image: linear-gradient(to right, #fdba74, #f97316);
+  /* orange-300 to orange-400 */
+  background-size: 200% auto;
+  background-position: 0% 50%;
+  transition: background-position 0.5s ease-in;
+}
+
+.hover-gradient-move:hover {
+  animation: gradient-x-hover 0.6s ease-in forwards;
+}
+
 
 html.lenis,
 html.lenis body {

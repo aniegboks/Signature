@@ -24,8 +24,8 @@ const Faq: FC<FaqProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="my-24"
     >
-      <hr className="text-neutral-300 mt-24" />
       <Container>
         <RevealAnimation>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-24">

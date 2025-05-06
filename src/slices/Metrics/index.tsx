@@ -5,7 +5,7 @@ import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
 import Container from '@/components/ui/container';
 import { PrismicRichText } from '@prismicio/react';
-import { Citrus, Sprout, Martini, Flame } from 'lucide-react';
+import { Palette, Atom, Expand, WashingMachine } from 'lucide-react';
 import Carousel from '@/components/ui/carousel';
 import { RevealAnimation } from '@/utils/reveal_animation';
 
@@ -68,7 +68,7 @@ const Metric: FC<ContentProps> = ({ slice }) => {
               </div>
 
               <div className="py-48">
-                <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight mb-2">
+                <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight mb-2 font-bold">
                   <h3>Project Description</h3>
                 </div>
                 <div className="text-start mb-4">
@@ -79,35 +79,35 @@ const Metric: FC<ContentProps> = ({ slice }) => {
                     <div>
                       <div className="flex justify-between my-4 text-neutral-600 py-4">
                         <span className="flex">
-                          <Citrus size={18} />
-                          <p className="mx-4">Flavour</p>
+                        <Palette size={18} />
+                          <p className="mx-4">Color</p>
                         </span>
                         <span>{stat_result}</span>
                       </div>
                       <hr className="text text-neutral-300 my-2" />
                       <div className="flex my-4 justify-between text-neutral-600 py-4">
                         <span className="flex">
-                          <Sprout size={18} />
-                          <p className="mx-4">Type</p>
+                        <Atom  size={18}/>
+                          <p className="mx-4">Material</p>
                         </span>
-                        <span>Natural</span>
+                        <span>Cotton</span>
                       </div>
                       <hr className="text text-neutral-300 my-2" />
 
                       <div className="flex my-4 justify-between text-neutral-600 py-4">
                         <span className="flex ">
-                          <Martini size={18} />
-                          <p className="mx-4">Beverage</p>
+                        <Expand size={18}/>
+                          <p className="mx-4">Type</p>
                         </span>
                         <span>{al_stat}</span>
                       </div>
                       <hr className="text text-neutral-300 my-2" />
                       <div className="flex justify-between text-neutral-600 py-4">
                         <span className="flex">
-                          <Flame size={18} />
-                          <p className="px-4">Calories</p>
+                        <WashingMachine size={18}/>
+                          <p className="px-4">Laundary</p>
                         </span>
-                        <span>Low-calorie</span>
+                        <span>Machine friendly</span>
                       </div>
                       <hr className="text text-neutral-300 my-2" />
                     </div>

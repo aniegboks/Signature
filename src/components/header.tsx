@@ -9,7 +9,7 @@ const Header = async () => {
     const client = createClient(repositoryName);
     const settings = await client.getSingle("settings");
     return (
-        <header className="shadow-sm bg-white z-50 fixed w-full top-0">
+        <header className="bg-white z-50 fixed w-full top-0">
             <Container>
                 <Nav settings={settings} />
             </Container>

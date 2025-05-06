@@ -6,7 +6,7 @@ import { PrismicRichText } from "@prismicio/react";
 import dynamic from "next/dynamic";
 import Container from "@/components/ui/container";
 import { RevealAnimation } from "@/utils/reveal_animation";
-
+import Button from "@/components/ui/button";
 const SliceZone = dynamic(() => import('@prismicio/react').then((module) => module.SliceZone));
 
 /**
@@ -51,6 +51,13 @@ const About: FC<AboutProps> = ({ slice }) => {
                   <PrismicRichText field={slice.primary.caption} />
                 </div>
               </div>
+              {slice.primary.links.map(({ about, label }) => (
+                <PrismicNextLink key={label} field={about}>
+                  <Button variant="secondary" className="mt-2 hover:text-white animate-gradient-x">
+                    {label}
+                  </Button>
+                </PrismicNextLink>
+              ))}
             </div>
           </RevealAnimation>
         </div>

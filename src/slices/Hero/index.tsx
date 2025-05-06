@@ -36,7 +36,7 @@ export default function Hero({ slice }: HeroProps) {
 
               {slice.primary.image?.url && (
                 <div className="relative mt-2 w-full">
-                  <div className="absolute inset-0 bg-black opacity-20 z-10 pointer-events-none" />
+                  <div className="absolute inset-0 bg-black opacity-20 z-10 pointer-events-none rounded-md" />
                   <PrismicNextImage
                     field={slice.primary.image}
                     className="w-full h-auto max-h-[100dvh] object-cover relative z-0"
@@ -69,7 +69,7 @@ export default function Hero({ slice }: HeroProps) {
             </div>
             {slice.primary.image?.url && (
               <div className="relative mt-2 w-full">
-                <div className="absolute inset-0 bg-black opacity-20 z-10 pointer-events-none" />
+                <div className="absolute inset-0 bg-black opacity-20 z-10 pointer-events-none rounded-md" />
                 <PrismicNextImage
                   field={slice.primary.image}
                   className="w-full h-auto max-h-[100dvh] object-cover relative z-0"

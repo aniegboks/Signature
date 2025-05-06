@@ -15,15 +15,15 @@ const Footer = async () => {
   return (
     <footer className="py-8">
       <div>
-        <hr className="text-neutral-300" />
         <Container>
+        <hr className="text-neutral-300" />
           <RevealAnimation>
             <div>
               <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 pt-24 pb-8 px-4">
                 {/* Left section */}
                 <div>
-                  <Link href="/" className="text-xl font-heading font-bold italic">
-                  {`{ Nectar: website }`}
+                  <Link href="/" className="text-2xl font-heading font-bold text-orange-500">
+                  {`Signature`}
                   </Link>
                   <div className="mt-2">
                     <PrismicRichText field={settings.data.paragraph} />
@@ -81,7 +81,7 @@ const Footer = async () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
                 <div className="font-heading italic text-sm">
                   © {new Date().getFullYear()}
-                  <span className="mx-2 text-sm">Nectar Inc. All rights reserved</span>
+                  <span className="mx-2 text-sm">Signature Inc. All rights reserved</span>
                 </div>
                 <div className="flex sm:justify-end gap-4">
                   {settings.data.socials.map(({ icon_link, icons }, index) => (
@@ -97,7 +97,6 @@ const Footer = async () => {
       </div>
 
       <div className="">
-        {/* Other footer content here */}
       </div>
     </footer>
   );

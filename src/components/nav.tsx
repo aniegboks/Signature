@@ -1,132 +1,157 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { PrismicNextLink } from '@prismicio/next';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import { SettingsDocument } from '../../prismicio-types';
-import { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { PrismicNextLink } from "@prismicio/next";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { SettingsDocument } from "../../prismicio-types";
 import { AnimatePresence, motion } from "framer-motion";
 
-
 interface SettingsProps {
-    settings: SettingsDocument<string>
+  settings: SettingsDocument<string>;
 }
+
+const menuVariants = {
+  open: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+  closed: {
+    transition: {
+      staggerChildren: 0.03,
+      staggerDirection: -1,
+    },
+  },
+};
+
+const itemVariants = {
+  open: { opacity: 1, y: 0 },
+  closed: { opacity: 0, y: -10 },
+};
+
 const Nav = ({ settings }: SettingsProps) => {
+  const [isToggle, setIsToggle] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-    const [isToggle, setIsToggle] = useState(false);
-    return (
-        <nav className="py-6">
-            <div className="flex items-center justify-between gap-6">
-                {/* Left Navigation */}
-                <ul className="hidden md:flex items-center gap-4">
-                    {settings.data.navigation.map(({ link, label }) => (
-                        <li key={label}>
-                            <PrismicNextLink
-                                field={link}
-                                className="text-sm font-medium text-gray-700 hover:text-black transition"
-                            >
-                                {label}
-                            </PrismicNextLink>
-                        </li>
-                    ))}
-                </ul>
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < lastScrollY) {
+        setShowNavbar(true); // Scrolling up
+      } else {
+        setShowNavbar(false); // Scrolling down
+      }
+      setLastScrollY(currentScrollY);
+    };
 
-                {/* Center Logo */}
-                <Link href="/" className="text-xl font-heading font-bold italic text-gray-900 hover:opacity-80 transition ">
-                    {`{ Nectar: website }`}
-                </Link>
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
-                {/* Right CTA */}
-                <ul className="hidden md:flex items-center gap-4">
-                    {settings.data.cta.map(({ cta_link, cta_label }) => (
-                        <li key={cta_label}>
-                            <PrismicNextLink
-                                field={cta_link}
-                                className="text-sm font-medium text-gray-700 hover:text-black transition"
-                            >
-                                {cta_label}
-                            </PrismicNextLink>
-                        </li>
-                    ))}
-                </ul>
-                <div className='md:hidden flex items-center'>
+  return (
+    <motion.nav
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      initial={{ y: 0 }}
+      animate={{ y: showNavbar ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="backdrop-blur-md bg-white/30 px-4 py-6 md:py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 md:px-8 md:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
+          {/* Left Nav */}
+          <ul className="hidden md:flex items-center gap-4">
+            {settings.data.navigation.map(({ link, label }) => (
+              <li key={label}>
+                <PrismicNextLink
+                  field={link}
+                  className="text-sm font-medium text-gray-700 hover:text-black transition"
+                >
+                  {label}
+                </PrismicNextLink>
+              </li>
+            ))}
+          </ul>
 
-                    {isToggle ?
-                        (
-                            <button className='cursor-pointer text-neutral-600' onClick={() => setIsToggle(!isToggle)}>
-                                <X size={18} />
-                            </button>
-                        ) : (
-                            <button className='cursor-pointer text-neutral-600' onClick={() => setIsToggle(!isToggle)}>
-                                <Menu size={18} />
-                            </button>
-                        )
-                    }
-                </div>
-            </div>
-            <AnimatePresence>
-                {isToggle && (
-                    <motion.div
-                        className="overflow-hidden mt-4"
-                        initial={{ height: 0 }}
-                        animate={{ height: 'auto' }}
-                        exit={{ height: 0 }}
-                    >
-                        <ul className="flex flex-col gap-8 py-4 md:hidden">
-                            {settings.data.navigation.map(({ link, label }, i) => (
-                                <motion.li
-                                    key={i}
-                                    onClick={() => setIsToggle(!isToggle)}
-                                    className="list-none"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{
-                                        delay: i * 0.1,
-                                        duration: 0.5,
-                                        ease: [0.22, 0.03, 0.26, 1],
-                                    }}
-                                >
-                                    <PrismicNextLink
-                                        field={link}
-                                        className="text-sm font-medium text-gray-700 hover:text-black transition"
-                                    >
-                                        {label}
-                                    </PrismicNextLink>
-                                </motion.li>
-                            ))}
-                        </ul>
+          {/* Logo */}
+          <Link
+            href="/"
+            className="text-2xl font-heading font-bold text-orange-500 hover:opacity-80 transition"
+          >
+            Signature
+          </Link>
 
-                        <ul className="flex flex-col gap-8 md:hidden mt-4">
-                            {settings.data.cta.map(({ cta_link, cta_label }) => (
-                                <motion.li
-                                    key={cta_label}
-                                    onClick={() => setIsToggle(!isToggle)}
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{
-                                        delay: 4 * 0.1,
-                                        duration: 0.5,
-                                        ease: [0.22, 0.03, 0.26, 1],
-                                    }}
-                                >
-                                    <PrismicNextLink
-                                        field={cta_link}
-                                        className="text-sm font-medium text-gray-700 hover:text-black transition"
-                                    >
-                                        {cta_label}
-                                    </PrismicNextLink>
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+          {/* Right Nav */}
+          <ul className="hidden md:flex items-center gap-4">
+            {settings.data.cta.map(({ cta_link, cta_label }) => (
+              <li key={cta_label}>
+                <PrismicNextLink
+                  field={cta_link}
+                  className="text-sm font-medium text-gray-700 hover:text-black transition"
+                >
+                  {cta_label}
+                </PrismicNextLink>
+              </li>
+            ))}
+          </ul>
 
+          {/* Hamburger */}
+          <div className="md:hidden flex items-center">
+            <button
+              className="cursor-pointer text-neutral-600"
+              onClick={() => setIsToggle(!isToggle)}
+            >
+              {isToggle ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
+        </div>
+      </div>
 
-        </nav>)
-}
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isToggle && (
+          <motion.div
+            className="md:hidden bg-white/90 backdrop-blur-md shadow-md px-6 py-6"
+            variants={menuVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+          >
+            <motion.ul className="flex flex-col gap-6">
+              {settings.data.navigation.map(({ link, label }) => (
+                <motion.li
+                  key={label}
+                  variants={itemVariants}
+                  onClick={() => setIsToggle(false)}
+                >
+                  <PrismicNextLink
+                    field={link}
+                    className="text-sm font-medium text-gray-700 hover:text-black transition"
+                  >
+                    {label}
+                  </PrismicNextLink>
+                </motion.li>
+              ))}
+              {settings.data.cta.map(({ cta_link, cta_label }) => (
+                <motion.li
+                  key={cta_label}
+                  variants={itemVariants}
+                  onClick={() => setIsToggle(false)}
+                >
+                  <PrismicNextLink
+                    field={cta_link}
+                    className="text-sm font-medium text-gray-700 hover:text-black transition"
+                  >
+                    {cta_label}
+                  </PrismicNextLink>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
+  );
+};
 
-export default Nav 
+export default Nav;

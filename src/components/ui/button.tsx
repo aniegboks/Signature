@@ -3,11 +3,11 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import clsx from 'clsx';
 
 // Define the button styles with variants using `cva`
-const buttonClasses = cva('border h-12 rounded-full px-6', {
+const buttonClasses = cva('h-12 rounded-tl-xl rounded-br-xl px-12', {
   variants: {
     variant: {
       primary: 'borer-white text-white bg-transparent border-primary hover:bg-white hover:text-black',
-      secondary: 'border-black color-black bg-transparent hover:bg-black hover:text-white',
+      secondary: 'text-white font-bold bg-orange-300 transition-all duration-300 ease-in hover:text-white hover-gradient-move',
     },
     size: {
       sm: 'h-10',
@@ -21,7 +21,7 @@ const buttonClasses = cva('border h-12 rounded-full px-6', {
 // Button props interface with variant support
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonClasses> {
+  VariantProps<typeof buttonClasses> {
   children: React.ReactNode;
 }
 
