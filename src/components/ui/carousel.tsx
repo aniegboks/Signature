@@ -30,7 +30,7 @@ export default function Carousel({ images, autoSlideDelay = 4000 }: CarouselProp
   }, [images.length, autoSlideDelay])
 
   return (
-    <div className="w-full relative aspect-video overflow-hidden bg-black">
+    <div className="w-full relative aspect-3/2 overflow-hidden bg-black">
       {/* Animated Zoom-In Image */}
       <AnimatePresence mode="wait">
         <motion.div
