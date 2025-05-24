@@ -72,7 +72,7 @@ const Metric: FC<ContentProps> = ({ slice }) => {
                   <h3>Project Description</h3>
                 </div>
                 <div className="text-start mb-4">
-                  <p>Nectar embodies essence of craftsmanship.</p>
+                  <p>Signature embodies essence of craftsmanship.</p>
                 </div>
                 {slice.primary.overview.map(({ stat_result, al_stat }, i) => (
                   <div key={i}>
