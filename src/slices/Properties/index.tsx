@@ -48,7 +48,7 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <div className="text-xl font-heading font-bold">
+                      <div className="text-md sm:text-xl font-heading font-bold">
                         <PrismicRichText field={heading} />
                       </div>
                       <div className="text-md mt-4 font-body">
