@@ -45,7 +45,7 @@ const Recent: FC<RecentProps> = ({ slice }) => {
               </div>
             </div>
 
-            <div className="mt-8 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4">
+            <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4">
               {slice.primary.image_navigator.map(
                 ({ display_img, display_link, display_text, display_geo }) => (
                   <div key={display_text} className="flex flex-col h-full">

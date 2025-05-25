@@ -35,7 +35,7 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
             </div>
 
             {/* Property Cards */}
-            <div className="mt-8 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 mb-20">
               {slice.primary.image_navigator.map(({ heading, display_img, paragraph, navigator_link }, i) => (
                 <div key={i} className="flex flex-col h-full">
                   <PrismicNextLink field={navigator_link}>
