@@ -52,7 +52,7 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
                         <PrismicRichText field={heading} />
                       </div>
                       <div className="text-md mt-2 font-body">
-                        <div className="flex gap-4 text-neutral-600">
+                        <div className="flex gap-4 text-neutral-600 font-body text-sm">
                           <span className="flex items-center">
                             <PrismicRichText field={paragraph} />
                           </span>

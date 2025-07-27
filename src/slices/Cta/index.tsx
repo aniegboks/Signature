@@ -27,12 +27,12 @@ const Cta: FC<CtaProps> = ({ slice }) => {
               <div className="w-full h-full rounded-s-md">
                 <PrismicNextImage
                   field={slice.primary.cta_img}
-                  className="w-full h-full object-cover rounded-s-md"
+                  className="w-full h-full object-cover rounded-l-md"
                 />
               </div>
 
               {/* Right Side - Text and Form */}
-              <div className="flex flex-col justify-center h-full w-full bg-neutral-800 p-6 rounded-e-md">
+              <div className="flex flex-col justify-center h-full w-full bg-neutral-800 p-6 rounded-r-md">
                 <div className="w-full">
                   <ContactForm />
                 </div>
