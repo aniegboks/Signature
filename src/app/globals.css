@@ -10,7 +10,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-heading: "Cormorant Infant", serif;
-  --font-body: "Cormorant Infant", serif;
+  --font-body: "Urbanist", serif;
 }
 
 /* Removed the dark mode override for background/foreground colors */

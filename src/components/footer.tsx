@@ -25,7 +25,7 @@ const Footer = async () => {
                   <Link href="/" className="text-2xl font-heading font-bold text-orange-500">
                   {`Signature`}
                   </Link>
-                  <div className="mt-2">
+                  <div className="mt-2 font-body text-neutral-600 text-sm">
                     <PrismicRichText field={settings.data.paragraph} />
                   </div>
                 </div>
@@ -35,7 +35,7 @@ const Footer = async () => {
                   <div>
                     {settings.data.cta.map(({ cta_label, cta_link }, index) => (
                       <span key={index}
-                        className='flex lg:justify-end md:justify-start sm:justify-start text-sm'>
+                        className='flex lg:justify-end md:justify-start sm:justify-start text-sm font-body text-neutral-600'>
                         <PrismicNextLink
                           field={cta_link}
                           className="block mb-4 text-sm"
@@ -48,7 +48,7 @@ const Footer = async () => {
                   <div>
 
                     {settings.data.navigation.map(({ link, label }, index) => (
-                      <span key={index} className='flex lg:justify-end md:justify-start sm:justify-start text-sm'>
+                      <span key={index} className='flex lg:justify-end md:justify-start sm:justify-start text-sm font-body text-neutral-600'>
 
                         <PrismicNextLink
                           field={link}
@@ -62,7 +62,7 @@ const Footer = async () => {
                   <div>
                     {settings.data.lega.map(({ legal_link, legal_label }, index) => (
                       <span key={index}
-                        className='flex lg:justify-end md:justify-start sm:justify-start text-sm'>
+                        className='flex lg:justify-end md:justify-start sm:justify-start text-sm font-body text-neutral-600'>
                         <PrismicNextLink
                           field={legal_link}
                           className="block mb-4 text-sm"

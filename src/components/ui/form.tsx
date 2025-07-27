@@ -39,7 +39,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className="w-full space-y-4">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-white my-2">
+          <label htmlFor="name" className="block text-sm font-body font-medium text-white my-2">
             Name
           </label>
           <input
@@ -48,14 +48,14 @@ const ContactForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border-b border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+            className="w-full px-4 py-2 border-b border-gray-300  focus:outline-none text-white bg-transparent font-body text-sm"
             required
           />
         </div>
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-white my-2">
+          <label htmlFor="email" className="block text-sm font-body font-medium text-white my-2">
             Email
           </label>
           <input
@@ -64,14 +64,14 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border-b border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+            className="w-full px-4 py-2 border-b border-gray-300 font-body text-sm focus:outline-none text-white bg-transparent"
             required
           />
         </div>
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-white mb-2 mt-16">
+          <label htmlFor="message" className="block text-sm  font-body font-medium text-white mb-2 mt-16">
             Message
           </label>
           <textarea
@@ -80,7 +80,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             rows={4}
-            className="w-full px-4 py-2 border-b border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+            className="w-full px-4 py-2 border-b border-gray-300 font-body text-sm focus:outline-none focus:ring-1 focus:ring-white-500 text-white bg-transparent"
             required
           />
         </div>
@@ -91,9 +91,8 @@ const ContactForm = () => {
             variant="secondary"
             type="submit"
             disabled={isSubmitting}
-            className={`hover:bg-blue-800 text-white mt-4 font-bold py-2 px-6 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${
-              isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className={`hover:bg-blue-800 text-white mt-4 font-bold py-2 font-body text-sm px-6 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+              }`}
           >
             {isSubmitting ? "Sending..." : "Send"}
           </Button>

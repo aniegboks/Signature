@@ -65,7 +65,7 @@ const Nav = ({ settings }: SettingsProps) => {
               <li key={label}>
                 <PrismicNextLink
                   field={link}
-                  className="text-sm font-medium text-gray-700 hover:text-black transition"
+                  className="text-sm font-medium text-gray-600 hover:text-black transition font-body"
                 >
                   {label}
                 </PrismicNextLink>
@@ -87,7 +87,7 @@ const Nav = ({ settings }: SettingsProps) => {
               <li key={cta_label}>
                 <PrismicNextLink
                   field={cta_link}
-                  className="text-sm font-medium text-gray-700 hover:text-black transition"
+                  className="text-sm font-medium text-gray-600 hover:text-black transition font-body"
                 >
                   {cta_label}
                 </PrismicNextLink>

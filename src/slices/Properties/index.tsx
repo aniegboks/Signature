@@ -29,13 +29,13 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
               <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight font-bold">
                 <PrismicRichText field={slice.primary.heading} />
               </div>
-              <div className="text-sm md:text-md mt-2">
+              <div className="text-sm md:text-md mt-2 font-body">
                 <PrismicRichText field={slice.primary.paragraph} />
               </div>
             </div>
 
             {/* Property Cards */}
-            <div className="mt-8 grid md:grid-cols-3 grid-cols-2 gap-4 mb-20">
+            <div className="mt-8 grid md:grid-cols-4 grid-cols-2 gap-4 mb-20">
               {slice.primary.image_navigator.map(({ heading, display_img, paragraph, navigator_link }, i) => (
                 <div key={i} className="flex flex-col h-full">
                   <PrismicNextLink field={navigator_link}>
@@ -51,7 +51,7 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
                       <div className="text-md sm:text-xl font-heading font-bold">
                         <PrismicRichText field={heading} />
                       </div>
-                      <div className="text-md mt-4 font-body">
+                      <div className="text-md mt-2 font-body">
                         <div className="flex gap-4 text-neutral-600">
                           <span className="flex items-center">
                             <PrismicRichText field={paragraph} />

@@ -64,7 +64,7 @@ const Faq: FC<FaqProps> = ({ slice }) => {
                   <AnimatePresence initial={false}>
                     {displayIndex === i && (
                       <motion.div
-                        className="text-neutral-600 overflow-hidden"
+                        className="text-neutral-600 overflow-hidden font-body text-sm"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}

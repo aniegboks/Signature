@@ -25,11 +25,11 @@ const About: FC<AboutProps> = ({ slice }) => {
     >
       <Container>
         <SliceZone />
-        <div className="px-8 py-32">
+        <div className="py-32">
           <RevealAnimation>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight mb-4">
+                <div className="text-2xl md:text-4xl font-heading leading-tight mb-4">
                   {slice.primary.links.map(({ about, label }) => (
                     <PrismicNextLink className="font-bold" key={label} field={about}>
                       {label}
@@ -37,7 +37,7 @@ const About: FC<AboutProps> = ({ slice }) => {
                   ))}
                 </div>
                 <div
-                  className="text-md font-heading max-w-full text-neutral-600"
+                  className="text-sm font-body max-w-full text-neutral-600 "
                   style={{ maxWidth: '800px' }}
                 >
                   <PrismicRichText field={slice.primary.history} />
@@ -45,7 +45,7 @@ const About: FC<AboutProps> = ({ slice }) => {
               </div>
               <div className="text-start md:text-left flex justify-end">
                 <div
-                  className="text-md font-heading max-w-full text-neutral-600"
+                  className="text-sm font-body max-w-full text-neutral-600"
                   style={{ maxWidth: '800px' }}
                 >
                   <PrismicRichText field={slice.primary.caption} />
@@ -53,7 +53,7 @@ const About: FC<AboutProps> = ({ slice }) => {
               </div>
               {slice.primary.links.map(({ about, label }) => (
                 <PrismicNextLink key={label} field={about}>
-                  <Button variant="secondary" className="mt-2 hover:text-white animate-gradient-x">
+                  <Button variant="secondary" className="mt-2 hover:text-white animate-gradient-x font-body text-sm">
                     {label}
                   </Button>
                 </PrismicNextLink>
