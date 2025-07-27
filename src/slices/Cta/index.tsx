@@ -8,7 +8,6 @@ import { RevealAnimation } from "@/utils/reveal_animation";
 
 export type CtaProps = SliceComponentProps<Content.CtaSlice>;
 
-// Cta.tsx
 const Cta: FC<CtaProps> = ({ slice }) => {
   return (
     <section
@@ -22,20 +21,15 @@ const Cta: FC<CtaProps> = ({ slice }) => {
             <div className="text-3xl md:text-4xl font-bold mb-8 p-4 text-center">
               <h3>Have a Question? We&apos;re Here to Help</h3>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Left Side - Image */}
-              <div className="w-full h-full rounded-s-md">
+            <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-md">
+              <div className="w-full h-full">
                 <PrismicNextImage
                   field={slice.primary.cta_img}
-                  className="w-full h-full object-cover rounded-l-md"
+                  className="w-full h-full object-cover rounded-t-md lg:rounded-t-none lg:rounded-l-md"
                 />
               </div>
-
-              {/* Right Side - Text and Form */}
-              <div className="flex flex-col justify-center h-full w-full bg-neutral-800 p-6 rounded-r-md">
-                <div className="w-full">
-                  <ContactForm />
-                </div>
+              <div className="flex flex-col justify-center h-full w-full bg-neutral-800 p-6 rounded-b-md lg:rounded-b-none lg:rounded-r-md">
+                <ContactForm />
               </div>
             </div>
           </div>
