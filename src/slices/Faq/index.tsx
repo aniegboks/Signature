@@ -28,7 +28,7 @@ const Faq: FC<FaqProps> = ({ slice }) => {
     >
       <Container>
         <RevealAnimation>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-16">
             {/* Left Section */}
             <div>
               <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight font-bold">

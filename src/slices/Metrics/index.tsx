@@ -67,7 +67,7 @@ const Metric: FC<ContentProps> = ({ slice }) => {
                 </div>
               </div>
 
-              <div className="py-48">
+              <div className="py-16">
                 <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight mb-2 font-bold">
                   <h3>Housing Description</h3>
                 </div>

@@ -20,7 +20,7 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="my-23"
+      className="my-16"
     >
       <Container>
         <RevealAnimation>

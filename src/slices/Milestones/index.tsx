@@ -20,11 +20,11 @@ const Milestones: FC<MilestonesProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="my-38"
+      className="my-24"
     >
       <Container>
         <RevealAnimation>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-24 pb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div>
               <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight font-bold">
                 <PrismicRichText field={slice.primary.heading} />
