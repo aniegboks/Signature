@@ -111,7 +111,7 @@ const Nav = ({ settings }: SettingsProps) => {
         <AnimatePresence>
           {isToggle && (
             <motion.div
-              className="md:hidden bg-white/90 backdrop-blur-md shadow-md px-6 py-6"
+              className="md:hidden bg-white/90 backdrop-blur-md shadow-md px-6 py-6 font-body text-sm text-neutral-600"
               variants={menuVariants}
               initial="closed"
               animate="open"
@@ -126,7 +126,7 @@ const Nav = ({ settings }: SettingsProps) => {
                   >
                     <PrismicNextLink
                       field={link}
-                      className="text-sm font-medium text-gray-700 hover:text-black transition"
+                      className="text-sm font-medium text-neutral-600 hover:text-black transition"
                     >
                       {label}
                     </PrismicNextLink>
@@ -140,7 +140,7 @@ const Nav = ({ settings }: SettingsProps) => {
                   >
                     <PrismicNextLink
                       field={cta_link}
-                      className="text-sm font-medium text-gray-700 hover:text-black transition"
+                      className="text-sm font-medium text-neutral-600 hover:text-black transition"
                     >
                       {cta_label}
                     </PrismicNextLink>
