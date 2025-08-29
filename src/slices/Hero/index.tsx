@@ -19,7 +19,6 @@ export default function Hero({ slice }: HeroProps) {
       {slice.variation === "alternate" ? (  
         <RevealAnimation>
           <div>
-            <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <Container>
               <div>
                 <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 pt-48 pb-16">
@@ -52,7 +51,6 @@ export default function Hero({ slice }: HeroProps) {
       ) : (
         <RevealAnimation>
           <div>
-            <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <Container>
               <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 pt-48 pb-16">
                 <div>
