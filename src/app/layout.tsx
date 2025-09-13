@@ -23,13 +23,13 @@ const jost = Jost({
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
-    const client = createClient(); // ✅ no repoName here
+    const client = createClient();
     const settings = await client.getSingle("settings");
 
     return {
       title: settings.data.site_title || "Keyvera alternate",
       description:
-        settings.data.meta_description || "Experience the peak of real-estate",
+        settings.data.meta_description || "Experience the peak of real-estates",
       openGraph: {
         images: settings.data.og_image?.url
           ? [{ url: settings.data.og_image.url }]
@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
     console.error("Error fetching metadata:", error);
     return {
       title: "Keyvera alternate",
-      description: "Experience the peak of real-estate",
+      description: "Experience the peak of real-estates",
     };
   }
 }
