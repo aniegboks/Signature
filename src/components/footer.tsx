@@ -38,7 +38,7 @@ const Footer = async () => {
                         className='flex lg:justify-end md:justify-start sm:justify-start text-[8px] font-body text-neutral-600'>
                         <PrismicNextLink
                           field={cta_link}
-                          className="block mb-4 text-[8px] sm:text-sm text-gray-600 hover:text-black transition duration-300"
+                          className="block mb-4 text-[10px] sm:text-sm text-gray-600 hover:text-black transition duration-300"
                         >
                           {cta_label}
                         </PrismicNextLink>
@@ -52,7 +52,7 @@ const Footer = async () => {
 
                         <PrismicNextLink
                           field={link}
-                          className="block mb-4 text-[8px] sm:text-sm text-gray-600 hover:text-black transition duration-300"
+                          className="block mb-4 text-[10px] sm:text-sm text-gray-600 hover:text-black transition duration-300"
                         >
                           {label}
                         </PrismicNextLink>
@@ -65,7 +65,7 @@ const Footer = async () => {
                         className='flex lg:justify-end md:justify-start sm:justify-start text-[8px] font-body text-neutral-600'>
                         <PrismicNextLink
                           field={legal_link}
-                          className="block mb-4 text-[8px] sm:text-sm text-gray-600 hover:text-black transition duration-300"
+                          className="block mb-4 text-[10px] sm:text-sm text-gray-600 hover:text-black transition duration-300"
                         >
                           {legal_label}
                         </PrismicNextLink>
