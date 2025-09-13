@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import { Forum, Jost } from "next/font/google";
 import "./globals.css";
-import { createClient } from "@prismicio/client";
+import { createClient, repositoryName } from "@/prismicio"; 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
 import { ReactLenis } from "@/utils/lenis";
 
-// Forum only has one weight (400 normal)
 const forum = Forum({
   weight: "400",
   style: "normal",
@@ -25,7 +23,7 @@ const jost = Jost({
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
-    const client = createClient(repositoryName);
+    const client = createClient(); // ✅ no repoName here
     const settings = await client.getSingle("settings");
 
     return {
@@ -49,9 +47,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613">
       <ReactLenis root>
