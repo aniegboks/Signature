@@ -35,7 +35,7 @@ const Footer = async () => {
                   <div>
                     {settings.data.cta.map(({ cta_label, cta_link }, index) => (
                       <span key={index}
-                        className='flex lg:justify-end md:justify-start sm:justify-start text-[8px] font-body text-neutral-600'>
+                        className='flex lg:justify-end md:justify-start sm:justify-start text-[10px] font-body text-neutral-600'>
                         <PrismicNextLink
                           field={cta_link}
                           className="block mb-4 text-[10px] sm:text-sm text-gray-600 hover:text-black transition duration-300"
@@ -48,7 +48,7 @@ const Footer = async () => {
                   <div>
 
                     {settings.data.navigation.map(({ link, label }, index) => (
-                      <span key={index} className='flex lg:justify-end md:justify-start sm:justify-start text-[8px] font-body text-neutral-600'>
+                      <span key={index} className='flex lg:justify-end md:justify-start sm:justify-start text-[10px] font-body text-neutral-600'>
 
                         <PrismicNextLink
                           field={link}
@@ -62,7 +62,7 @@ const Footer = async () => {
                   <div>
                     {settings.data.lega.map(({ legal_link, legal_label }, index) => (
                       <span key={index}
-                        className='flex lg:justify-end md:justify-start sm:justify-start text-[8px] font-body text-neutral-600'>
+                        className='flex lg:justify-end md:justify-start sm:justify-start text-[10px] font-body text-neutral-600'>
                         <PrismicNextLink
                           field={legal_link}
                           className="block mb-4 text-[10px] sm:text-sm text-gray-600 hover:text-black transition duration-300"
