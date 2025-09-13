@@ -28,7 +28,7 @@ const Recent: FC<RecentProps> = ({ slice }) => {
         <RevealAnimation>
           <div>
             <div className="flex flex-col items-center justify-center sm:mt-4 mt-12">
-              <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight font-bold text-center">
+              <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tighter font-bold text-center">
                 <PrismicRichText field={slice.primary.heading} />
               </div>
               <div className="text-sm md:text-md mt-2 text-center max-w-2xl mx-auto">

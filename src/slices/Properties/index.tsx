@@ -26,7 +26,7 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
         <RevealAnimation>
           <div className="flex-grow">
             <div className="flex flex-col items-center justify-center sm:mt-4 mt-16">
-              <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight font-bold">
+              <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tighter font-bold">
                 <PrismicRichText field={slice.primary.heading} />
               </div>
               <div className="text-sm md:text-md mt-2 font-body">
@@ -48,7 +48,7 @@ const Properties: FC<PropertiesProps> = ({ slice }) => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <div className="text-md sm:text-xl font-heading font-bold">
+                      <div className="text-md sm:text-xl font-heading font-bold tracking-tighter">
                         <PrismicRichText field={heading} />
                       </div>
                       <div className="text-md mt-2 font-body">

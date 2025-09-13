@@ -18,7 +18,7 @@ const Cta: FC<CtaProps> = ({ slice }) => {
       <Container>
         <RevealAnimation>
           <div>
-            <div className="text-3xl md:text-4xl font-bold mb-8 p-4 text-center">
+            <div className="text-3xl md:text-4xl font-bold mb-8 p-4 text-center tracking-tighter">
               <h3>Have a Question? We&apos;re Here to Help</h3>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-md">

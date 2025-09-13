@@ -22,7 +22,7 @@ const Footer = async () => {
               <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 pt-24 pb-8 px-4">
                 {/* Left section */}
                 <div>
-                  <Link href="/" className="text-2xl font-heading font-bold text-orange-500">
+                  <Link href="/" className="text-2xl font-heading tracking-tighter font-bold text-orange-500">
                   {`Signature`}
                   </Link>
                   <div className="mt-2 font-body text-neutral-600 text-sm">

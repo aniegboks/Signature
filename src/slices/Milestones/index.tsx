@@ -26,10 +26,10 @@ const Milestones: FC<MilestonesProps> = ({ slice }) => {
         <RevealAnimation>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div>
-              <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight font-bold">
+              <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tighter font-bold">
                 <PrismicRichText field={slice.primary.heading} />
               </div>
-              <div className="font-heading max-w-full text-neutral-600 mt-2 text-md">
+              <div className="font-heading max-w-full text-neutral-600 mt-2 text-md tracking-tighter">
                 <PrismicRichText field={slice.primary.sub_heading} />
               </div>
               <div className="mt-4">

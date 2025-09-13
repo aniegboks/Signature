@@ -28,7 +28,7 @@ const About: FC<AboutProps> = ({ slice }) => {
             <RevealAnimation>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 <div>
-                  <div className="text-2xl md:text-4xl font-heading leading-tight mb-4">
+                  <div className="text-2xl md:text-4xl font-heading leading-tighter tracking-tighter mb-4">
                     {slice.primary.links.map(({ about, label }) => (
                       <PrismicNextLink
                         className="font-bold"
@@ -80,7 +80,7 @@ const About: FC<AboutProps> = ({ slice }) => {
             <RevealAnimation>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 <div>
-                  <div className="text-2xl md:text-4xl font-heading leading-tight mb-4">
+                  <div className="text-2xl md:text-4xl font-heading leading-tight mb-4 tracking-tighter">
                     {slice.primary.links.map(({ about, label }) => (
                       <PrismicNextLink
                         className="font-bold"

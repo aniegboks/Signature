@@ -38,7 +38,7 @@ const Metric: FC<ContentProps> = ({ slice }) => {
               <div>
                 <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 pt-48 pb-16">
                   <div>
-                    <div className="text-4xl md:text-5xl font-heading leading-tight tracking-tight">
+                    <div className="text-4xl md:text-5xl font-heading leading-tight tracking-tighter">
                       <PrismicRichText field={slice.primary.title} />
                     </div>
                     <div className="text-sm mt-4 text-neutral-600 font-body">
@@ -68,7 +68,7 @@ const Metric: FC<ContentProps> = ({ slice }) => {
               </div>
 
               <div className="py-16">
-                <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tight mb-2 font-bold">
+                <div className="text-2xl md:text-4xl font-heading leading-tight tracking-tighter mb-2 font-bold">
                   <h3>Housing Description</h3>
                 </div>
                 <div className="text-start mb-4 font-sm font-body text-neutral-600">

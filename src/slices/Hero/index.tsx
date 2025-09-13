@@ -23,7 +23,7 @@ export default function Hero({ slice }: HeroProps) {
               <div>
                 <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 pt-48 pb-16">
                   <div>
-                    <div className="text-4xl md:text-5xl font-heading leading-tight tracking-tight">
+                    <div className="text-4xl md:text-5xl font-heading leading-tight tracking-tighter">
                       <PrismicRichText field={slice.primary.heading} />
                     </div>
                   </div>
@@ -55,7 +55,7 @@ export default function Hero({ slice }: HeroProps) {
               <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 pt-48 pb-16">
                 <div>
                   <div
-                    className="text-4xl md:text-5xl font-heading leading-tight tracking-tight"
+                    className="text-4xl md:text-5xl font-heading leading-tight tracking-tighter"
                     suppressHydrationWarning
                   >
                     <PrismicRichText field={slice.primary.heading} />
@@ -63,7 +63,7 @@ export default function Hero({ slice }: HeroProps) {
                 </div>
                 <div className="text-start 2xl:text-right">
                   <div
-                    className="text-xl sm:text-xl md:text-3xl font-heading font-bold leading-tight tracking-tight"
+                    className="text-xl sm:text-xl md:text-3xl font-heading font-bold leading-tight tracking-tighter"
                     suppressHydrationWarning
                   >
                     <PrismicRichText field={slice.primary.sub_heading} />

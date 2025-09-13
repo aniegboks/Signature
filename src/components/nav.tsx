@@ -76,7 +76,7 @@ const Nav = ({ settings }: SettingsProps) => {
             {/* Logo */}
             <Link
               href="/"
-              className="text-2xl font-heading font-bold text-orange-500 hover:opacity-80 transition"
+              className="text-2xl font-heading font-bold text-orange-500 hover:opacity-80 transition tracking-tighter"
             >
               Signature
             </Link>
