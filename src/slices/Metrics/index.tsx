@@ -36,7 +36,7 @@ const Metric: FC<ContentProps> = ({ slice }) => {
           <RevealAnimation>
             <div className="pb-24">
               <div>
-                <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 pt-48 pb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-48 pb-16">
                   <div>
                     <div className="text-4xl md:text-5xl font-heading leading-tight tracking-tighter">
                       <PrismicRichText field={slice.primary.title} />
