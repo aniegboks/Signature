@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Forum, Jost } from "next/font/google";
+import { Cormorant_Infant, Jost } from "next/font/google";
 import "./globals.css";
 import { createClient, repositoryName } from "@/prismicio"; 
 import Header from "@/components/header";
@@ -7,11 +7,11 @@ import Footer from "@/components/footer";
 import { PrismicPreview } from "@prismicio/next";
 import { ReactLenis } from "@/utils/lenis";
 
-const forum = Forum({
+const cormorantInfant = Cormorant_Infant({
   weight: "400",
   style: "normal",
   subsets: ["latin"],
-  variable: "--font-forum",
+  variable: "--font-cormorant_infant",
   display: "swap",
 });
 
@@ -54,7 +54,7 @@ export default function RootLayout({
     <html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613">
       <ReactLenis root>
         <body
-          className={`${jost.variable} ${forum.variable} antialiased bg-white text-black`}
+          className={`${jost.variable} ${cormorantInfant.variable} antialiased bg-white text-black`}
         >
           <Header />
           <main>{children}</main>

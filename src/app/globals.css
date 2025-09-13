@@ -9,7 +9,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-heading: "Forum", serif;
+  --font-heading: "Cormorant Infant", serif;
   --font-body: "Jost", serif;
 }
 
