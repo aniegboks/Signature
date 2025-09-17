@@ -64,7 +64,7 @@ const Footer = async () => {
 
                   {/* Legal */}
                   <div className="flex flex-col items-start lg:items-end">
-                    <h2 className="text-md font-heading font-bold mb-2">{`Legal Documentations`}</h2>
+                    <h2 className="text-md font-heading font-bold mb-2">{`Legal Documents`}</h2>
                     {settings.data.lega.map(({ legal_link, legal_label }, index) => (
                       <PrismicNextLink
                         key={index}
