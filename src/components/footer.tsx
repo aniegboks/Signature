@@ -36,7 +36,7 @@ const Footer = async () => {
                 <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 mt-4">
                   {/* Contact */}
                   <div className="flex flex-col items-start lg:items-end">
-                    <h2 className="text-md font-heading font-bold mb-2">{`Contact`}</h2>
+                    <h2 className="text-md font-heading font-bold mb-2">{`Contacts`}</h2>
                     {settings.data.cta.map(({ cta_label, cta_link }, index) => (
                       <PrismicNextLink
                         key={index}
@@ -50,7 +50,7 @@ const Footer = async () => {
 
                   {/* Navigation */}
                   <div className="flex flex-col items-start lg:items-end">
-                    <h2 className="text-md font-heading font-bold mb-2">{`Navigation`}</h2>
+                    <h2 className="text-md font-heading font-bold mb-2">{`Navigations`}</h2>
                     {settings.data.navigation.map(({ link, label }, index) => (
                       <PrismicNextLink
                         key={index}
@@ -64,7 +64,7 @@ const Footer = async () => {
 
                   {/* Legal */}
                   <div className="flex flex-col items-start lg:items-end">
-                    <h2 className="text-md font-heading font-bold mb-2">{`Legal Documents`}</h2>
+                    <h2 className="text-md font-heading font-bold mb-2">{`Legal Documentations`}</h2>
                     {settings.data.lega.map(({ legal_link, legal_label }, index) => (
                       <PrismicNextLink
                         key={index}
