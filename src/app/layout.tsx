@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Infant, Jost } from "next/font/google";
+import { Cormorant_Infant, Dosis, Poppins } from "next/font/google";
 import "./globals.css";
 import { createClient, repositoryName } from "@/prismicio"; 
 import Header from "@/components/header";
@@ -15,11 +15,13 @@ const cormorantInfant = Cormorant_Infant({
   display: "swap",
 });
 
-const jost = Jost({
+const dosis = Dosis({
   subsets: ["latin"],
-  variable: "--font-jost",
+  weight: ["400", "500", "700"], 
+  variable: "--font-dosis",
   display: "swap",
 });
+
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -54,7 +56,7 @@ export default function RootLayout({
     <html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613">
       <ReactLenis root>
         <body
-          className={`${jost.variable} ${cormorantInfant.variable} antialiased bg-white text-black`}
+          className={`${dosis.variable} ${cormorantInfant.variable} antialiased bg-white text-black`}
         >
           <Header />
           <main>{children}</main>
