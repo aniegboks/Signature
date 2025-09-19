@@ -3,14 +3,14 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import clsx from 'clsx';
 
 // Define the button styles with variants using `cva`
-const buttonClasses = cva('h-10 rounded-full px-12', {
+const buttonClasses = cva('h-9 rounded-full px-4', {
   variants: {
     variant: {
       primary: 'borer-white text-white bg-transparent border-primary hover:bg-white hover:text-black',
-      secondary: 'text-white font-bold bg-orange-300 transition-all duration-300 ease-in hover:text-white hover-gradient-move',
+      secondary: 'text-white font-bold bg-blue-300 transition-all duration-300 ease-in hover:text-white hover-gradient-move',
     },
     size: {
-      sm: 'h-10',
+      sm: 'h-9',
     },
   },
   defaultVariants: {

@@ -94,7 +94,7 @@ const ContactForm = () => {
             className={`hover:bg-blue-800 text-white mt-4 font-bold py-2 font-body text-sm px-6 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
               }`}
           >
-            {isSubmitting ? "Sending..." : "Send"}
+            {isSubmitting ? "Sending Message..." : "Send Message"}
           </Button>
         </div>
       </form>
