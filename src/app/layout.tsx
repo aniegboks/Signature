@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Infant, Jost} from "next/font/google";
+import { Cormorant_Infant, Urbanist,} from "next/font/google";
 import "./globals.css";
 import { createClient, repositoryName } from "@/prismicio"; 
 import Header from "@/components/header";
@@ -15,10 +15,10 @@ const cormorantInfant = Cormorant_Infant({
   display: "swap",
 });
 
-const jost = Jost({
+const urbanist = Urbanist({
   subsets: ["latin"],
   weight: ["400", "500", "700"], 
-  variable: "--font-jost",
+  variable: "--font-urbanist",
   display: "swap",
 });
 
@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613">
       <ReactLenis root>
         <body
-          className={`${jost.variable} ${cormorantInfant.variable} antialiased bg-white text-black`}
+          className={`${urbanist.variable} ${cormorantInfant.variable} antialiased bg-white text-black`}
         >
           <Header />
           <main>{children}</main>
